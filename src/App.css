@@ -1,8 +1,3 @@
-/*#root {
-  max-width: 1280px;
-  margin: 0 auto;
-}*/
-
 .form{
   width:400px;
   background: gray;
@@ -100,13 +95,3 @@ transition: opacity 400ms ease-in;
 	box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #00d9ff; }
-<a href="#openModal">Lanzar el modal</a>
-
-<div id="openModal" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<h2>Mi modal</h2>
-		<p>Este es un ejemplo de modal, creado gracias al poder de CSS3.</p>
-		<p>Puedes hacer un montón de cosas aquí, como alertas o incluso crear un formulario de registro aquí mismo.</p>
-	</div>
-</div>

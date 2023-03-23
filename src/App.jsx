@@ -21,15 +21,12 @@ function App() {
 
   }
   const addProduct =productData=>{
-    //setProducts([...products, productData])
     axios
       .post("https://products-crud.academlo.tech/products/", productData)
       .then(()=>getInfo())
       .catch(error=>console.error(error))
   }
   const deleteProduct =productData=>{
-    //const filteredProducts = products.filter(product=>product.productId!=productData)
-    //setProducts(filteredProducts)
     axios
       .delete(`https://products-crud.academlo.tech/products/${productData}/`)
       .then(()=>getInfo())
@@ -41,10 +38,6 @@ function App() {
   }
 
   const productModificated = productData => {
-    /*const item = products.findIndex(product => product.productId === productData.productId)
-    products[item]=productData
-    setProducts([...products])
-    setProductUpdate(null)*/
     axios
       .put(`https://products-crud.academlo.tech/products/${productData.id}/`, productData)
       .then(()=>{

@@ -19,7 +19,6 @@ const ProductList = ({productsData, deleteProductAction, selectProduct}) => {
                         <div className="productCardSelf">
                             <span><strong>Producto: </strong></span>{product.name} <br />
                             <span><strong>Categoría: </strong></span>{product.category} <br />
-                            {/*<span><strong>Descripción: </strong></span>{product.description} <br />*/}
                             <span><strong>Precio: </strong></span>{product.price} <br />
                             <span><strong>Disponible: </strong></span>{product.isAvailable ? "  Yes":"  No"}<br />
                             <button className="btn" onClick={()=>confirmDel(product.id)}>Eliminar</button>

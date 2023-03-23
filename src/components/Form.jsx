@@ -11,32 +11,26 @@ const Form = ({createProduct, selectedProduct, updateProduct}) => {
     }
   },[selectedProduct])
 
-  //Funcion para enviar informacion del formulario.
   const submit = data =>{
     if(selectedProduct){
         updateProduct(data)
         clearForm()
     }else{
-    //data.productId=Date.now()
-    //console.log(data)
     createProduct(data)
     clearForm()
     }
-  } //fin funcion submit
-
-  //Funcion para limpiar formulario
+  } 
   const clearForm = ()=>{
     reset(
         {
             name: "",
             category: "",
-            //description: "",
             price:"",
             isAvailable: false
         }
     )
-  } //fin funcion clearForm
-
+  } 
+  
   return (
         <div className="form">
             <form onSubmit={handleSubmit(submit)} action="">
@@ -50,12 +44,6 @@ const Form = ({createProduct, selectedProduct, updateProduct}) => {
                     <input placeholder="Categoria relacionada" className="fields" name="Categoria" id="category"  {...register("category",{required:true})} />
                     {errors.category?.type==="required"&& <small role="alert" style={{color: "orange"}} >La categoria es requerida</small>}
                 </div>
-                {/*<div>
-                    <label htmlFor="description">Descripción: </label>
-                    <input name="Descripcion" id="description"  {...register("description",{required:true})} type="textArea" 
-                    />
-                    {errors.description?.type==="required"&& <small role="alert" style={{color: "tomato"}} >La descripcion es requerida</small>}
-                </div>*/}
                 <div>
                     <label htmlFor="price">Precio: </label>
                     <input className="fields" name="Precio" id="price"  {...register("price",{required:true})}

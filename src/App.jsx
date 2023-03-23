@@ -23,13 +23,17 @@ function App() {
   const addProduct =productData=>{
     axios
       .post("https://products-crud.academlo.tech/products/", productData)
-      .then(()=>getInfo())
+      .then(()=>{
+        getInfo()
+        confirm("Producto Creado")})
       .catch(error=>console.error(error))
   }
   const deleteProduct =productData=>{
     axios
       .delete(`https://products-crud.academlo.tech/products/${productData}/`)
-      .then(()=>getInfo())
+      .then(()=>{
+        getInfo()
+        confirm("Producto Eliminado")})
       .catch(error=>console.error(error))
   }
   
@@ -43,6 +47,7 @@ function App() {
       .then(()=>{
         getInfo()
         setProductUpdate(null)
+        confirm("Producto Modificado")
       })
       .catch(error=>console.error(error))
   }
